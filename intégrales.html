@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Développements limités</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* Additional CSS for page separation */
+  .page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 0.8em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+  }
+  .section-content {
+    position: relative;
+    z-index: 1;
+    padding: 1em; /* Add padding to center content */
+    text-align: center; /* Center align text */
+  }
+</style>
+</head>
+<body>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><span>&#127968;</span><b>Accueil</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><span>&#128290;</span><b>Exercices</b></a>
+        <div class="dropdown-content">
+          <a href="#" class="sub-topic" data-topic="algebra"><b>Algèbre</b></a>
+          <a href="#" class="sub-topic" data-topic="calculus"><b>Calculs</b></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+    <div class="sidebar">
+      <div class="exercise-menu">
+        <h2>Thèmes du chapitre</h2>
+        <ul>
+          <li><a href="#bases">Les bases</a></li>
+          <li><a href="#changement_de_variable">Les produits de fonctions</a></li>
+          <li><a href="#integration_par_parties">Les compositions</a></li>
+          <li><a href="#integration_par_parties_tabulaire">Intégration par parties tabulaire</a></li>
+          <li><a href="#applications">Applications en physique</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="content">
+      <!-- Section 1 -->
+      <div class="page" id="page1" style="background-color: rgba(112, 255, 196, 0.541);">
+        <div class="section-content" id="bases">
+          <h1 class="les-bases">Les bases de l'intégration</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise1.1">
+            <h2>Exercice 1 : Forme polynomiale ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{2}(5x^{3}-3x+4) dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{2} (5x^3 - 3x + 4) \, dx = \left[\frac{5x^4}{4} - \frac{3x^2}{2} + 4x\right]_{-1}^{2} = \left(\frac{5(2)^4}{4} - \frac{3(2)^2}{2} + 4(2)\right) - \left(\frac{5(-1)^4}{4} - \frac{3(-1)^2}{2} + 4(-1)\right)$$</p>
+              <p>$$\int_{-1}^{2} (5x^3 - 3x + 4) \, dx = \frac{105}{4}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 2 -->
+          <div class="exercise" id="exercise1.2">
+            <h2>Exercice 2 : Forme trigonométrique ★★★☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-\pi}^{\frac{\pi}{2}} \cos(2\theta-\pi) - \sin\left(\theta-\frac{\pi}{4}\right) d\theta$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-\pi}^{\frac{\pi}{2}} \cos(2\theta-\pi) - \sin\left(\theta-\frac{\pi}{4}\right) \, d\theta$$</p>
+              <p>$$= \left[\frac{\sin(2\theta - \pi)}{2} + \cos\left(\theta - \frac{\pi}{4}\right)\right]_{-\pi}^{\frac{\pi}{2}}$$</p>
+              <p>$$= \left(\frac{\sin\left(2\left(\frac{\pi}{2}\right) - \pi\right)}{2} + \cos\left(\frac{\pi}{2} - \frac{\pi}{4}\right)\right) - \left(\frac{\sin\left(2(-\pi) - \pi\right)}{2} + \cos\left(-\pi - \frac{\pi}{4}\right)\right)$$</p>
+              <p>$$= \left(\frac{\sin(0)}{2} + \cos\left(\frac{\pi}{4}\right)\right) - \left(\frac{\sin(-3\pi)}{2} + \cos\left(-\frac{5\pi}{4}\right)\right) = \left(0 + \frac{\sqrt{2}}{2}\right) - \left(0 - \frac{\sqrt{2}}{2}\right)$$</p>
+              <p>$$= \frac{2\sqrt{2}}{2}= \sqrt{2}$$</p>
+
+
+            </div>
+          </div>
+          <!-- Exercise 3 -->
+          <div class="exercise" id="exercise1.3">
+            <h2>Exercice 3 : Suivre son intuition ★★★☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{0}^{1}\frac{2x+2}{x^{2}+1}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{0}^{1}\frac{2x+2}{x^{2}+1} \, dx = \left[\ln(x^2+1) + 2\arctan(x)\right]_{0}^{1} = \ln(2) + 2\arctan(1) - \ln(1) - 2\arctan(0) = \ln(2) + \frac{\pi}{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 4 -->
+          <div class="exercise" id="exercise1.4">
+            <h2>Exercice 4</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{-14}{(5x+9)^{2}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{1}\frac{-14}{(5x+9)^{2}} \, dx = \left[\frac{14}{5x+9}\right]_{-1}^{1} = \frac{14}{5(1)+9} - \frac{14}{5(-1)+9} = \frac{14}{14} - \frac{14}{4} = 1 - \frac{7}{2} = -\frac{1}{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 5 -->
+          <div class="exercise" id="exercise1.5">
+            <h2>Exercice 5</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{2x-\pi}{\sqrt{1-x^{2}}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{1} \frac{2x-\pi}{\sqrt{1-x^{2}}} \, dx = \int_{-1}^{1} \frac{2x}{1-x^{2}}+\pi \frac{-1}{\sqrt{1-x^{2}}} \, dx$$</p>
+              <p>$$= \int_{-1}^{1} \frac{2x}{\sqrt{1-x^{2}}}+ \pi \int_{-1}^{1} \frac{-1}{\sqrt{1-x^{2}}} \, dx = [-2\sqrt{1-x^2}]_{-1}^{1} + \pi [\arccos(x)]_{-1}^{1}$$</p>
+              <p>$$= -2[\sqrt{1-x^2}]_{-1}^{1} + \pi (\arccos(1) - \arccos(-1)) = 0 + \pi \cdot (- \pi )= - \pi^{2}$$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+      <!-- Section 2 -->
+      <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
+        <div class="section-content" id="changement_de_variable">
+          <h1 class="changement-de-variable">Changement de variables</h1>
+          <div class="exercise" id="exercise2">
+            <h2>Exercice 2</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 2 -->
+              <p><b>Statement of exercise 2...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 2...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 3 -->
+      <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
+        <div class="section-content" id="integration_par_parties">
+          <h1 class="integration-par-parties">Intégration par parties</h1>
+          <div class="exercise" id="exercise3">
+            <h2>Exercice 3</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 3 -->
+              <p><b>Statement of exercise 3...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 3...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4 -->
+      <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
+        <div class="section-content" id="integration_par_parties_tabulaire">
+          <h1 class="integration-par-parties-tabulaire">Intégration par parties tabulaire</h1>
+          <div class="exercise" id="exercise4">
+            <h2>Exercice 4</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 4 -->
+              <p><b>Statement of exercise 4...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 4...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 5 -->
+      <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
+        <div class="section-content" id="applications">
+          <h1 class="applications">Applications en physique</h1>
+          <div class="exercise" id="exercise5">
+            <h2>Exercice 5</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 5 -->
+              <p><b>Statement of exercise 5...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 5...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+<script src="script.js"></script>
+<script>
+  // JavaScript for changing background color of pages
+  const pages = document.querySelectorAll('.page');
+  const sections = document.querySelectorAll('.section-content');
+  
+  // Function to change background color of pages
+  function changePageColor() {
+    const scrollPosition = window.scrollY;
+    sections.forEach((section, index) => {
+      const sectionRect = section.getBoundingClientRect();
+      if (sectionRect.top <= window.innerHeight * 0.5 && sectionRect.bottom >= window.innerHeight * 0.5) {
+        pages.forEach((page) => {
+          page.style.backgroundColor = window.getComputedStyle(section).backgroundColor;
+        });
+      }
+    });
+  }
+  
+  // Debounce function to improve scroll performance
+  function debounce(func, delay) {
+    let timeoutId;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+  
+  // Event listener for scroll event
+  const debouncedChangePageColor = debounce(changePageColor, 100);
+  document.body.addEventListener('scroll', debouncedChangePageColor);
+</script>
+
+</body>
+</html>
