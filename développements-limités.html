@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Développements limités</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><span>&#127968;</span><b>Accueil</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><span>&#128290;</span><b>Exercices</b></a>
+        <div class="dropdown-content">
+          <a href="#" class="sub-topic" data-topic="algebra"><b>Algèbre</b></a>
+          <a href="#" class="sub-topic" data-topic="calculus"><b>Calculs</b></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+    <div class="sidebar">
+      <div class="exercise-menu">
+        <h2>Thèmes du chapitre</h2>
+        <ul>
+          <li><a href="#1">Les formes usuelles</a></li>
+          <li><a href="#2">Les produits de fonctions</a></li>
+          <li><a href="#3">Les compositions</a></li>
+          <li><a href="#4">Calculs de limites</a></li>
+          <li><a href="#5">Applications en physique</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="content">
+      <!-- Section 1 -->
+      <div class="page" id="page1" style="background-color: rgba(112, 255, 196, 0.541);">
+        <div class="section-content" id="1">
+          <h1 class="les-bases">Les bases des développements limités</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise1.1">
+            <h2>Exercice 1 : Développement limité d'une fonction exponentielle ★☆☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 5 en 0 :</b></p>
+              <p>$$f(x) = e^x$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Le développement limité de \(f(x)\) à l'ordre 5 en 0 est :</p>
+              <p>$$f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + o(x^5) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \frac{x^5}{120} + o(x^5)$$</p>
+            </div>
+          </div>
+          <!-- Exercise 2 -->
+          <div class="exercise" id="exercise1.2">
+            <h2>Exercice 2 : Développement limité d'une fonction trigonométrique ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
+              <p>$$g(x) = \sin(x)$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Le développement limité de \(g(x)\) à l'ordre 4 en 0 est :</p>
+              <p>$$g(x) = x - \frac{x^3}{6} + \frac{x^5}{120} + o(x^5)$$</p>
+            </div>
+          </div>
+          <!-- Exercise 3 -->
+          <div class="exercise" id="exercise1.3">
+            <h2>Exercice 3 : Développement limité d'une fonction rationnelle ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
+              <p>$$f(x) = \frac{1}{2 + 2x}$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$f(x) = \frac{1}{2 + 2x} = \frac{1}{2(1 + x)} = \frac{1}{2} \times \frac{1}{1 + x}$$</p>
+              <p>En utilisant le développement de \( \frac{1}{1+x}\), nous avons :</p>
+              <p>$$f(x) = \frac{1}{2}\left(1 - x + x^2 - x^3 + x^4 + o(x^4)\right)$$</p>
+              <p>$$f(x) = \frac{1}{2} - \frac{1}{2}x + \frac{1}{2}x^2 - \frac{1}{2}x^3 + \frac{1}{2}x^4 + o(x^4)$$</p>
+            </div>
+          </div>
+          <!-- Exercise 4 -->
+          <div class="exercise" id="exercise1.4">
+            <h2>Exercice 4 : Développement limité d'une fonction logarithmique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 5 en 1 :</b></p>
+              <p>$$h(x) = \ln(x)$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Le développement limité de \(h(x)\) à l'ordre 5 en 1 est :</p>
+              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
+              <p>Explication :</p>
+              <p>Pour trouver le développement limité de \(h(x)\) à l'ordre 5 en 1, nous utilisons le développement de Taylor-Young :</p>
+              <p>$$h(x) = h(1) + h'(1)(x - 1) + \frac{h''(1)}{2!}(x - 1)^2 + \frac{h'''(1)}{3!}(x - 1)^3 + \frac{h^{(4)}(1)}{4!}(x - 1)^4 + \frac{h^{(5)}(1)}{5!}(x - 1)^5 + o((x - 1)^5)$$</p>
+              <p>En utilisant les valeurs connues des dérivées de \(\ln(x)\) en 1, nous obtenons :</p>
+              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
+            </div>
+          </div>
+          <!-- Exercise 5 -->
+          <div class="exercise" id="exercise1.5">
+            <h2>Exercice 5 : Développement limité d'une fonction racine carrée ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
+              <p>$$f(x) = \sqrt{x + 1}$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Le développement limité de \(f(x)\) à l'ordre 4 en 0 est :</p>
+              <p>$$f(x) = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 - \frac{5}{128}x^4 + o(x^4)$$</p>
+              <p>Explication :</p>
+              <p>Pour trouver le développement limité de \(f(x)\) à l'ordre 4 en 0, nous utilisons la méthode \(f(x) = (x + 1)^{\frac{1}{2}}\) :</p>
+              <p>$$f(x) = (1 + x)^{\frac{1}{2}} = 1 + \frac{1}{2}x + \left(\frac{1}{2} \times \frac{-1}{2}\right)\frac{x^2}{2} + \left(\frac{1}{2} \times \frac{-1}{2} \times \frac{-3}{2}\right)\frac{x^3}{6} + \left(\frac{1}{2} \times \frac{-1}{2} \times \frac{-3}{2} \times \frac{-5}{2}\right)\frac{x^4}{24} + o(x^4)$$</p>
+              <p>En simplifiant, nous obtenons :</p>
+              <p>$$f(x) = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 - \frac{5}{128}x^4 + o(x^4)$$</p>
+            </div>
+          </div>
+          <!-- Exercise 6 -->
+          <div class="exercise" id="exercise1.6">
+            <h2>Exercice 6 : Une petite subtilité ★★★☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 3 en 0 :</b></p>
+              <p>$$f(x) = \frac{(1+x)^4}{x}$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Pour trouver le développement limité de \(f(x)\) à l'ordre 3 en 0, <b>nous développons le numérateur à l'ordre 4 puisque nous divisons par \(x\)</b> ensuite :</p>
+              <p>Nous rappellons le développement à l'ordre 4 de \((1+x)^{\alpha }\) : $$(1+x)^{\alpha } = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} x^2 + \frac{\alpha (\alpha - 1)(\alpha - 2)}{3!} x^3 + \frac{\alpha (\alpha - 1)(\alpha - 2)(\alpha - 3)}{4!} x^4 + o(x^4)$$</p>
+              <p>Ainsi nous avons : $$(1+x)^{4} = 1 + 4 x + \frac{4 (4 - 1)}{2} x^2 + \frac{4 (4 - 1)(4 - 2)}{6} x^3 + \frac{4 (4 - 1)(4 - 2)(4 - 3)}{24} x^4 + o(x^4)$$</p>
+              <p>$$= 1 + 4x + \frac{12}{2} x^2 + \frac{24}{6} x^3 + \frac{24}{24} x^4 + o(x^4) = 1 + 4x + 6x^2 + 4x^3 + x^4 + o(x^4)$$</p>
+              <p>Nous pouvons ainsi diviser par \(x\) : $$f(x) = \frac{1 + 4x + 6x^2 + 4x^3 + x^4 + o(x^4)}{x} = \frac{1}{x} + 4 + 6x + 4x^2 + x^3 + o(x^3)$$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+      <!-- Section 2 -->
+      <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
+        <div class="section-content" id="2">
+          <h1 class="changement-de-variable">Changement de variables dans les développements limités</h1>
+          <div class="exercise" id="exercise2">
+            <h2>Exercice 2 : Utilisation d'un changement de variable dans un développement limité</h2>
+            <div class="exercise-statement">
+              <p><b>Statement of exercise 2...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 2...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 3 -->
+      <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
+        <div class="section-content" id="3">
+          <h1 class="integration-par-parties">Intégration par parties dans les développements limités</h1>
+          <div class="exercise" id="exercise3">
+            <h2>Exercice 3 : Utilisation de l'intégration par parties dans un développement limité</h2>
+            <div class="exercise-statement">
+              <p><b>Statement of exercise 3...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 3...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4 -->
+      <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
+        <div class="section-content" id="4">
+          <h1 class="integration-par-parties-tabulaire">Intégration par parties tabulaire dans les développements limités</h1>
+          <div class="exercise" id="exercise4">
+            <h2>Exercice 4 : Utilisation de l'intégration par parties tabulaire dans un développement limité</h2>
+            <div class="exercise-statement">
+              <p><b>Statement of exercise 4...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 4...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 5 -->
+      <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
+        <div class="section-content" id="5">
+          <h1 class="applications">Applications des développements limités en physique</h1>
+          <div class="exercise" id="exercise5">
+            <h2>Exercice 5 : Application des développements limités en physique</h2>
+            <div class="exercise-statement">
+              <p><b>Statement of exercise 5...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 5...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+<script src="script.js"></script>
+<script>
+  // JavaScript for changing background color of pages
+  const pages = document.querySelectorAll('.page');
+  const sections = document.querySelectorAll('.section-content');
+  
+  // Function to change background color of pages
+  function changePageColor() {
+    const scrollPosition = window.scrollY;
+    sections.forEach((section, index) => {
+      const sectionRect = section.getBoundingClientRect();
+      if (sectionRect.top <= window.innerHeight * 0.5 && sectionRect.bottom >= window.innerHeight * 0.5) {
+        pages.forEach((page) => {
+          page.style.backgroundColor = window.getComputedStyle(section).backgroundColor;
+        });
+      }
+    });
+  }
+  
+  // Debounce function to improve scroll performance
+  function debounce(func, delay) {
+    let timeoutId;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+  
+  // Event listener for scroll event
+  const debouncedChangePageColor = debounce(changePageColor, 100);
+  document.body.addEventListener('scroll', debouncedChangePageColor);
+</script>
+<footer>
+  <p>@2024</p>
+</footer>
+</body>
+</html>

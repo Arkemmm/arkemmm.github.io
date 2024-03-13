@@ -134,6 +134,37 @@
               <p>$$= -2[\sqrt{1-x^2}]_{-1}^{1} + \pi (\arccos(1) - \arccos(-1)) = 0 + \pi \cdot (- \pi )= - \pi^{2}$$</p>
             </div>
           </div>
+          <!-- Exercise 6 -->
+          <div class="exercise" id="exercise1.6">
+            <h2>Exercice 6 : Identité trigonométrique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{2x-\pi}{\sqrt{1-x^{2}}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Pour trouver le développement limité de \(f(x)\) à l'ordre 3 en 0, <b>nous développons le numérateur à l'ordre 4 puisque nous divisons par \(x\)</b> ensuite :</p>
+              <p>Nous rappellons le développement à l'ordre 4 de \((1+x)^{\alpha }\) : $$(1+x)^{\alpha } = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} x^2 + \frac{\alpha (\alpha - 1)(\alpha - 2)}{3!} x^3 + \frac{\alpha (\alpha - 1)(\alpha - 2)(\alpha - 3)}{4!} x^4 + o(x^4)$$</p>
+              <p></p>
+            </div>
+          </div>
+          <!-- Exercise 7 -->
+          <div class="exercise" id="exercise1.7">
+            <h2>Exercice 7 : Identité trigonométrique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int (3\sin(20x) \cos(23x) + 20 \sin(43x))dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int (3\sin(20x) \cos(23x) + 20 \sin(43x))dx = 3 \int (\sin(20x) \cos(23x))dx + 20 \int \sin(43x)dx$$</p>
+              <p>Nous rappelons que : \(\sin(\theta) \cos(\varphi) = \frac{1}{2} [\sin(\theta + \varphi) + \sin(\theta - \varphi)]\), ainsi nous avons :</p>
+              <p>$$ 3 \int \frac{1}{2}(\sin(43x) + \sin(-3x))dx + 20 \int \sin(43x)dx = \frac{3}{2}(-\frac{1}{43} \cos(43x) -\frac{1}{-3} \cos(-3x)) - 20 \times \frac{1}{43}cos(43x) + C $$</p>
+              <p>$$ = -\frac{3}{86} \cos(43x) + \frac{3}{6} \cos(-3x) - \frac{20}{43}cos(43x) + C = \frac{-3 - 40}{86}cos(43x) + \frac{1}{2} \cos(-3x) + C = -\frac{1}{2}cos(43x) + \frac{1}{2} \cos(-3x) + C$$</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
     
