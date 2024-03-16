@@ -1,21 +1,17 @@
-/*Définition des variables de styles */
+/* Définition des variables de styles */
 :root {
   --main-color: #0288a0;
   --main-color-70: #0288a0b3;
   --main-color-20: #0288a041;
   --contrast-color: #001c22;
   --light-color: #a2f1ff;
-  --white : #F9F7F3;
-  --shadow : 0.5em 0.5em 1em rgba(0, 0, 0, 0.1);
-  --dark-shadow : 0.5em 0.5em 1em rgba(0, 0, 0, 0.2);
+  --white: #F9F7F3;
+  --shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.2);
   --shadow-footer: 0 -0.5em 1em rgba(0, 0, 0, 0.2);
-
 }
 
-.sub-topic:hover{
-  scale: (1.2);
-}
-
+/* Main CSS styles */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +21,6 @@
 main {
   display: flex;
 }
-
 
 body {
   font-family: Arial, sans-serif;
@@ -40,7 +35,7 @@ header {
   border-radius: 0 0 0.7em 0.7em;
 }
 
-footer{
+footer {
   bottom: 0;
   text-align: center;
   background-color: #0288a0;
@@ -59,7 +54,8 @@ nav ul li {
   margin-right: 1.25em;
 }
 
-nav ul li a, .dropdown-content a {
+nav ul li a,
+.dropdown-content a {
   color: var(--white);
   text-decoration: none;
   padding: 0.625em;
@@ -164,7 +160,8 @@ nav ul li a, .dropdown-content a {
 .exercise-correction {
   width: 100%;
 }
-/*Style de l'énoncé*/
+
+/* Style de l'énoncé */
 .exercise-statement {
   background-color: #004855d2;
   color: var(--white);
@@ -181,7 +178,8 @@ nav ul li a, .dropdown-content a {
   box-shadow: var(--dark-shadow);
   transform: scale(1.005);
 }
-/*Style de la partie correction*/
+
+/* Style de la partie correction */
 .exercise-correction {
   background-color: #7bc51b62;
   padding: 0.625em;
@@ -203,6 +201,7 @@ nav ul li a, .dropdown-content a {
   outline: none;
   transition: color 0.3s ease;
 }
+
 .toggle-correction:hover {
   color: rgb(21, 179, 0);
 }
@@ -212,12 +211,15 @@ nav ul li a, .dropdown-content a {
 }
 
 @keyframes validation {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
-/* Menu des thème traitées dans le chapitre */
-
+/* Menu des thèmes traités dans le chapitre */
 .exercise-menu {
   width: 11em;
   padding: 1.25em;
@@ -259,7 +261,7 @@ nav ul li a, .dropdown-content a {
 }
 
 .exercise-menu a:hover {
-  background-color:var(--main-color-70); /* Change background color on hover */
+  background-color: var(--main-color-70); /* Change background color on hover */
   color: #8deeff; /* Change text color on hover */
   transform: scale(1.1); /* Scale effect on hover */
   box-shadow: var(--shadow);
@@ -268,7 +270,7 @@ nav ul li a, .dropdown-content a {
 /* Updated styling for main content */
 .content {
   flex: 1; /* Take remaining space */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 1em; /* Adjust padding as needed */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,7 +281,7 @@ nav ul li a, .dropdown-content a {
   top: 0;
   height: 100vh; /* Adjust height as needed */
   overflow-y: auto; /* Add scroll if content exceeds height */
-  padding-top: 20px;
+  padding-top: 1em;
   animation: slideInFromLeft 0.5s ease-in-out forwards;
 }
 
@@ -302,6 +304,7 @@ nav ul li a, .dropdown-content a {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
 }
+
 .section-content {
   position: relative;
   z-index: 1;

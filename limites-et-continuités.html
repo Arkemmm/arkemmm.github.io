@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intégrales</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><span>&#127968;</span><b>Accueil</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><span>&#128290;</span><b>Exercices</b></a>
+        <div class="dropdown-content">
+          <a href="#" class="sub-topic" data-topic="algebra"><b>Algèbre</b></a>
+          <a href="#" class="sub-topic" data-topic="calculus"><b>Calculs</b></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+    <div class="sidebar">
+      <div class="exercise-menu">
+        <h2>Thèmes du chapitre</h2>
+        <ul>
+          <li><a href="#bases">Les bases</a></li>
+          <li><a href="#changements_de_variable">Les changements de variables</a></li>
+          <li><a href="#integrations_par_parties">Intégrations par parties</a></li>
+          <li><a href="#integrations_par_parties_tabulaire">Intégrations par parties tabulaire</a></li>
+          <li><a href="#applications">Applications en physique</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="content">
+      <!-- Section 1 -->
+      <div class="page" id="page1" style="background-color: rgba(112, 255, 196, 0.541);">
+        <div class="section-content" id="bases">
+          <h1 class="les-bases">Les bases de l'intégration</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise1.1">
+            <h2>Exercice 1 : Forme polynomiale ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{2}(5x^{3}-3x+4) dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{2} (5x^3 - 3x + 4) \, dx = \left[\frac{5x^4}{4} - \frac{3x^2}{2} + 4x\right]_{-1}^{2} = \left(\frac{5(2)^4}{4} - \frac{3(2)^2}{2} + 4(2)\right) - \left(\frac{5(-1)^4}{4} - \frac{3(-1)^2}{2} + 4(-1)\right)$$</p>
+              <p>$$\int_{-1}^{2} (5x^3 - 3x + 4) \, dx = \frac{105}{4}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 2 -->
+          <div class="exercise" id="exercise1.2">
+            <h2>Exercice 2 : Forme trigonométrique ★★★☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-\pi}^{\frac{\pi}{2}} \cos(2\theta-\pi) - \sin\left(\theta-\frac{\pi}{4}\right) d\theta$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-\pi}^{\frac{\pi}{2}} \cos(2\theta-\pi) - \sin\left(\theta-\frac{\pi}{4}\right) \, d\theta$$</p>
+              <p>$$= \left[\frac{\sin(2\theta - \pi)}{2} + \cos\left(\theta - \frac{\pi}{4}\right)\right]_{-\pi}^{\frac{\pi}{2}}$$</p>
+              <p>$$= \left(\frac{\sin\left(2\left(\frac{\pi}{2}\right) - \pi\right)}{2} + \cos\left(\frac{\pi}{2} - \frac{\pi}{4}\right)\right) - \left(\frac{\sin\left(2(-\pi) - \pi\right)}{2} + \cos\left(-\pi - \frac{\pi}{4}\right)\right)$$</p>
+              <p>$$= \left(\frac{\sin(0)}{2} + \cos\left(\frac{\pi}{4}\right)\right) - \left(\frac{\sin(-3\pi)}{2} + \cos\left(-\frac{5\pi}{4}\right)\right) = \left(0 + \frac{\sqrt{2}}{2}\right) - \left(0 - \frac{\sqrt{2}}{2}\right)$$</p>
+              <p>$$= \frac{2\sqrt{2}}{2}= \sqrt{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 3 -->
+          <div class="exercise" id="exercise1.3">
+            <h2>Exercice 3 : Suivre son intuition ★★★☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{0}^{1}\frac{2x+2}{x^{2}+1}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{0}^{1}\frac{2x+2}{x^{2}+1} \, dx = \left[\ln(x^2+1) + 2\arctan(x)\right]_{0}^{1} = \ln(2) + 2\arctan(1) - \ln(1) - 2\arctan(0) = \ln(2) + \frac{\pi}{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 4 -->
+          <div class="exercise" id="exercise1.4">
+            <h2>Exercice 4</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{-14}{(5x+9)^{2}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{1}\frac{-14}{(5x+9)^{2}} \, dx = \left[\frac{14}{5x+9}\right]_{-1}^{1} = \frac{14}{5(1)+9} - \frac{14}{5(-1)+9} = \frac{14}{14} - \frac{14}{4} = 1 - \frac{7}{2} = -\frac{1}{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 5 -->
+          <div class="exercise" id="exercise1.5">
+            <h2>Exercice 5</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{2x-\pi}{\sqrt{1-x^{2}}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int_{-1}^{1} \frac{2x-\pi}{\sqrt{1-x^{2}}} \, dx = \int_{-1}^{1} \frac{2x}{1-x^{2}}+\pi \frac{-1}{\sqrt{1-x^{2}}} \, dx$$</p>
+              <p>$$= \int_{-1}^{1} \frac{2x}{\sqrt{1-x^{2}}}+ \pi \int_{-1}^{1} \frac{-1}{\sqrt{1-x^{2}}} \, dx = [-2\sqrt{1-x^2}]_{-1}^{1} + \pi [\arccos(x)]_{-1}^{1}$$</p>
+              <p>$$= -2[\sqrt{1-x^2}]_{-1}^{1} + \pi (\arccos(1) - \arccos(-1)) = 0 + \pi \cdot (- \pi )= - \pi^{2}$$</p>
+            </div>
+          </div>
+          <!-- Exercise 6 -->
+          <div class="exercise" id="exercise1.6">
+            <h2>Exercice 6 : Identité trigonométrique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int_{-1}^{1}\frac{2x-\pi}{\sqrt{1-x^{2}}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Pour trouver le développement limité de \(f(x)\) à l'ordre 3 en 0, <b>nous développons le numérateur à l'ordre 4 puisque nous divisons par \(x\)</b> ensuite :</p>
+              <p>Nous rappellons le développement à l'ordre 4 de \((1+x)^{\alpha }\) : $$(1+x)^{\alpha } = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} x^2 + \frac{\alpha (\alpha - 1)(\alpha - 2)}{3!} x^3 + \frac{\alpha (\alpha - 1)(\alpha - 2)(\alpha - 3)}{4!} x^4 + o(x^4)$$</p>
+              <p></p>
+            </div>
+          </div>
+          <!-- Exercise 7 -->
+          <div class="exercise" id="exercise1.7">
+            <h2>Exercice 7 : Identité trigonométrique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int (3\sin(20x) \cos(23x) + 20 \sin(43x))dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>$$\int (3\sin(20x) \cos(23x) + 20 \sin(43x))dx = 3 \int (\sin(20x) \cos(23x))dx + 20 \int \sin(43x)dx$$</p>
+              <p>Nous rappelons que : \(\sin(\theta) \cos(\varphi) = \frac{1}{2} [\sin(\theta + \varphi) + \sin(\theta - \varphi)]\), ainsi nous avons :</p>
+              <p>$$ 3 \int \frac{1}{2}(\sin(43x) + \sin(-3x))dx + 20 \int \sin(43x)dx = \frac{3}{2}(-\frac{1}{43} \cos(43x) -\frac{1}{-3} \cos(-3x)) - 20 \times \frac{1}{43}cos(43x) + C $$</p>
+              <p>$$ = -\frac{3}{86} \cos(43x) + \frac{3}{6} \cos(-3x) - \frac{20}{43}cos(43x) + C = \frac{-3 - 40}{86}cos(43x) + \frac{1}{2} \cos(-3x) + C = -\frac{1}{2}cos(43x) + \frac{1}{2} \cos(-3x) + C$$</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <!-- Changements de variables -->
+      <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
+        <div class="section-content" id="changements_de_variable">
+          <h1>Changements de variables</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 1 : Introduction à la substitution ★☆☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Nous aurions pu traiter cet exercice avec la forme usuelle : \(\int\frac{u'}{u} = ln(u)\). Mais nous allons voir la méthode de la substitution :</p>
+              <p>Soit \(u = (1 + x^{4})\) et donc la dérivé de u s'écrit \(du = 4x^{3}dx\) ainsi nous avons : \(dx = \frac{du}{x^{3}}\), nous pouvons alors écrire :</p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx = \int\frac{x^{3}}{u} \times \frac{du}{4x^{3}} = \frac{1}{4}\int \frac{1}{u}du = \frac{1}{4}ln(u) + C = \frac{1}{4}ln(1 + x^{4}) + C$$</p>
+            </div>
+          </div>
+          <!-- Exercise 2 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 2 : Démonstration de l'utilité de la substitution ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x}{1+x^{4}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Nous faisons face à un cas un peu plus difficile à permière vue. Nous allons donc découvrir l'intérer de la substitution :</p>
+              <p>Soit \(u = x^{2}\) et donc \(du = 2x dx\) ainsi nous avons : \(dx = \frac{du}{2x}\), nous pouvons alors écrire :</p>
+              <p class="mathExpression">\(\int\frac{x}{1+x^{4}}dx = \int\frac{x}{1+u^{2}} \times \frac{du}{2x} = \frac{1}{2}\int \frac{1}{1+u^{2}}du = \frac{1}{2}\arctan(u) + C = \frac{1}{2}\arctan(x^{2}) + C\)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Intégrations par parties -->
+      <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
+        <div class="section-content" id="integrations_par_parties">
+          <h1>Intégrations par parties</h1>
+          <div class="exercise" id="exercise3">
+            <h2>Exercice 3</h2>
+            <div class="exercise-statement">
+              <p><b>Statement of exercise 3...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 3...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4 -->
+      <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
+        <div class="section-content" id="integrations_par_parties_tabulaire">
+          <h1>Intégration par parties tabulaire</h1>
+          <div class="exercise" id="exercise4">
+            <h2>Exercice 4</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 4 -->
+              <p><b>Statement of exercise 4...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 4...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 5 -->
+      <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
+        <div class="section-content" id="applications">
+          <h1 class="applications">Applications en physique</h1>
+          <div class="exercise" id="exercise5">
+            <h2>Exercice 5</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 5 -->
+              <p><b>Statement of exercise 5...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 5...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

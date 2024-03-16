@@ -3,33 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Développements limités</title>
+<title>Intégrales</title>
 <link rel="stylesheet" href="styles.css">
-
-<style>
-  /* Additional CSS for page separation */
-  .page {
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    border-radius: 0.8em;
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
-  }
-  .section-content {
-    position: relative;
-    z-index: 1;
-    padding: 1em; /* Add padding to center content */
-    text-align: center; /* Center align text */
-  }
-</style>
-</head>
-<body>
-
+<script src="script.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
 <header>
   <nav>
@@ -52,9 +32,9 @@
         <h2>Thèmes du chapitre</h2>
         <ul>
           <li><a href="#bases">Les bases</a></li>
-          <li><a href="#changement_de_variable">Les produits de fonctions</a></li>
-          <li><a href="#integration_par_parties">Les compositions</a></li>
-          <li><a href="#integration_par_parties_tabulaire">Intégration par parties tabulaire</a></li>
+          <li><a href="#changements_de_variable">Les changements de variables</a></li>
+          <li><a href="#integrations_par_parties">Intégrations par parties</a></li>
+          <li><a href="#integrations_par_parties_tabulaire">Intégrations par parties tabulaire</a></li>
           <li><a href="#applications">Applications en physique</a></li>
         </ul>
       </div>
@@ -92,8 +72,6 @@
               <p>$$= \left(\frac{\sin\left(2\left(\frac{\pi}{2}\right) - \pi\right)}{2} + \cos\left(\frac{\pi}{2} - \frac{\pi}{4}\right)\right) - \left(\frac{\sin\left(2(-\pi) - \pi\right)}{2} + \cos\left(-\pi - \frac{\pi}{4}\right)\right)$$</p>
               <p>$$= \left(\frac{\sin(0)}{2} + \cos\left(\frac{\pi}{4}\right)\right) - \left(\frac{\sin(-3\pi)}{2} + \cos\left(-\frac{5\pi}{4}\right)\right) = \left(0 + \frac{\sqrt{2}}{2}\right) - \left(0 - \frac{\sqrt{2}}{2}\right)$$</p>
               <p>$$= \frac{2\sqrt{2}}{2}= \sqrt{2}$$</p>
-
-
             </div>
           </div>
           <!-- Exercise 3 -->
@@ -169,35 +147,48 @@
       </div>
     
     
-    
-    
-      <!-- Section 2 -->
+      <!-- Changements de variables -->
       <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
-        <div class="section-content" id="changement_de_variable">
-          <h1 class="changement-de-variable">Changement de variables</h1>
-          <div class="exercise" id="exercise2">
-            <h2>Exercice 2</h2>
+        <div class="section-content" id="changements_de_variable">
+          <h1>Changements de variables</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 1 : Introduction à la substitution ★☆☆☆☆</h2>
             <div class="exercise-statement">
-              <!-- LaTeX representation of Exercise 2 -->
-              <p><b>Statement of exercise 2...</b></p>
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Correction:</p>
-              <p>Correction of exercise 2...</p>
+              <p>Nous aurions pu traiter cet exercice avec la forme usuelle : \(\int\frac{u'}{u} = ln(u)\). Mais nous allons voir la méthode de la substitution :</p>
+              <p>Soit \(u = (1 + x^{4})\) et donc la dérivé de u s'écrit \(du = 4x^{3}dx\) ainsi nous avons : \(dx = \frac{du}{x^{3}}\), nous pouvons alors écrire :</p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx = \int\frac{x^{3}}{u} \times \frac{du}{4x^{3}} = \frac{1}{4}\int \frac{1}{u}du = \frac{1}{4}ln(u) + C = \frac{1}{4}ln(1 + x^{4}) + C$$</p>
+            </div>
+          </div>
+          <!-- Exercise 2 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 2 : Démonstration de l'utilité de la substitution ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x}{1+x^{4}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Nous faisons face à un cas un peu plus difficile à permière vue. Nous allons donc découvrir l'intérer de la substitution :</p>
+              <p>Soit \(u = x^{2}\) et donc \(du = 2x dx\) ainsi nous avons : \(dx = \frac{du}{2x}\), nous pouvons alors écrire :</p>
+              <p>\(\int\frac{x}{1+x^{4}}dx = \int\frac{x}{1+u^{2}} \times \frac{du}{2x} = \frac{1}{2}\int \frac{1}{1+u^{2}}du = \frac{1}{2}\arctan(u) + C = \frac{1}{2}\arctan(x^{2}) + C\)</p>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Section 3 -->
+      <!-- Intégrations par parties -->
       <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
-        <div class="section-content" id="integration_par_parties">
-          <h1 class="integration-par-parties">Intégration par parties</h1>
+        <div class="section-content" id="integrations_par_parties">
+          <h1>Intégrations par parties</h1>
           <div class="exercise" id="exercise3">
             <h2>Exercice 3</h2>
             <div class="exercise-statement">
-              <!-- LaTeX representation of Exercise 3 -->
               <p><b>Statement of exercise 3...</b></p>
               <button class="toggle-correction">✔</button>
             </div>
@@ -211,8 +202,8 @@
       
       <!-- Section 4 -->
       <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
-        <div class="section-content" id="integration_par_parties_tabulaire">
-          <h1 class="integration-par-parties-tabulaire">Intégration par parties tabulaire</h1>
+        <div class="section-content" id="integrations_par_parties_tabulaire">
+          <h1>Intégration par parties tabulaire</h1>
           <div class="exercise" id="exercise4">
             <h2>Exercice 4</h2>
             <div class="exercise-statement">
@@ -248,43 +239,5 @@
       </div>
     </div>
   </main>
-  
-<script src="script.js"></script>
-<script>
-  // JavaScript for changing background color of pages
-  const pages = document.querySelectorAll('.page');
-  const sections = document.querySelectorAll('.section-content');
-  
-  // Function to change background color of pages
-  function changePageColor() {
-    const scrollPosition = window.scrollY;
-    sections.forEach((section, index) => {
-      const sectionRect = section.getBoundingClientRect();
-      if (sectionRect.top <= window.innerHeight * 0.5 && sectionRect.bottom >= window.innerHeight * 0.5) {
-        pages.forEach((page) => {
-          page.style.backgroundColor = window.getComputedStyle(section).backgroundColor;
-        });
-      }
-    });
-  }
-  
-  // Debounce function to improve scroll performance
-  function debounce(func, delay) {
-    let timeoutId;
-    return function() {
-      const context = this;
-      const args = arguments;
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func.apply(context, args);
-      }, delay);
-    };
-  }
-  
-  // Event listener for scroll event
-  const debouncedChangePageColor = debounce(changePageColor, 100);
-  document.body.addEventListener('scroll', debouncedChangePageColor);
-</script>
-
 </body>
 </html>

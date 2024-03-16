@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaces vectoriels</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><span>&#127968;</span><b>Accueil</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><span>&#128290;</span><b>Exercices</b></a>
+        <div class="dropdown-content">
+          <a href="#" class="sub-topic" data-topic="algebra"><b>Algèbre</b></a>
+          <a href="#" class="sub-topic" data-topic="calculus"><b>Calculs</b></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+    <div class="sidebar">
+      <div class="exercise-menu">
+        <h2>Thèmes du chapitre</h2>
+        <ul>
+          <li><a href="#bases">Les bases</a></li>
+          <li><a href="#changements_de_variable">Les changements de variables</a></li>
+          <li><a href="#integrations_par_parties">Intégrations par parties</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="content">
+      <!-- Section 1 -->
+      <div class="page" id="page1" style="background-color: rgba(112, 255, 196, 0.541);">
+        <div class="section-content" id="bases">
+          <h1 class="les-bases">Les bases de l'intégration</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise1.1">
+            <h2>Exercice 1 : Forme polynomiale ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Montrer que \(S_n(\mathbb{R})\) et \(A_n(\mathbb{R})\) sont des espaces vectoriels :</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>On remarque que \(S_n(\mathbb{R})\) et \(A_n(\mathbb{R})\) sont tous deux des sous-espaces vectoriels de \(M_n(\mathbb{R})\), ainsi on doit vérifier qu'ils sont non-vide et stable par combinaisons linéaires.</p>
+              <p>Intéressons nous d'abord à \(S_n(\mathbb{R})\) : </p>
+              <p>La matrice nulle est symétrique, donc \(0_{M_{n}(\mathbb{R})} \in S_{n}(\mathbb{R})\), ce qui montre que \(S_n(\mathbb{R})\) est non-vide. Testons maintenant la stabilité par combinaisons linéaires :</p>
+              <p>Soit \((S_1 , S_2) \in (S_{n}(\mathbb{R}))^{2} \space \text{et} \space \lambda \in \mathbb{R}\), nous rappellons que \(^{t}S_1 = S_1 \space \text{et} \space ^{t}S_2 = S_2\), ainsi on cherche à montrer que \((\lambda S_1 + S_2) \in S_n(\mathbb{R})\) :</p>
+              <p>$$^{t}((\lambda S_1 + S_2)) = \lambda ^{t}S_1 + ^{t}S_2 = \lambda S_1 + S_2$$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <!-- Changements de variables -->
+      <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
+        <div class="section-content" id="changements_de_variable">
+          <h1>Changements de variables</h1>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 1 : Introduction à la substitution ★☆☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Nous aurions pu traiter cet exercice avec la forme usuelle : \(\int\frac{u'}{u} = ln(u)\). Mais nous allons voir la méthode de la substitution :</p>
+              <p>Soit \(u = (1 + x^{4})\) et donc la dérivé de u s'écrit \(du = 4x^{3}dx\) ainsi nous avons : \(dx = \frac{du}{x^{3}}\), nous pouvons alors écrire :</p>
+              <p>$$\int\frac{x^{3}}{1+x^{4}}dx = \int\frac{x^{3}}{u} \times \frac{du}{4x^{3}} = \frac{1}{4}\int \frac{1}{u}du = \frac{1}{4}ln(u) + C = \frac{1}{4}ln(1 + x^{4}) + C$$</p>
+            </div>
+          </div>
+          <!-- Exercise 1 -->
+          <div class="exercise" id="exercise2.1">
+            <h2>Exercice 2 : Démonstration de l'utilité de la substitution ★★☆☆☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer l'intégrale :</b></p>
+              <p>$$\int\frac{x}{1+x^{4}}dx$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Nous faisons face à un cas un peu plus difficile à permière vue. Nous allons donc découvrir l'intérer de la substitution :</p>
+              <p>Soit \(u = x^{2}\) et donc \(du = 2x dx\) ainsi nous avons : \(dx = \frac{du}{2x}\), nous pouvons alors écrire :</p>
+              <p class="copy-equation" onclick="copyEquation()">\(\int\frac{x}{1+x^{4}}dx = \int\frac{x}{1+u^{2}} \times \frac{du}{2x} = \frac{1}{2}\int \frac{1}{1+u^{2}}du = \frac{1}{2}\arctan(u) + C = \frac{1}{2}\arctan(x^{2}) + C\)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Intégrations par parties -->
+      <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
+        <div class="section-content" id="integrations_par_parties">
+          <h1>Intégrations par parties</h1>
+          <div class="exercise" id="exercise3">
+            <h2>Exercice 3</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 3 -->
+              <p><b>Statement of exercise 3...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 3...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4 -->
+      <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
+        <div class="section-content" id="integrations_par_parties_tabulaire">
+          <h1>Intégration par parties tabulaire</h1>
+          <div class="exercise" id="exercise4">
+            <h2>Exercice 4</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 4 -->
+              <p><b>Statement of exercise 4...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 4...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 5 -->
+      <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
+        <div class="section-content" id="applications">
+          <h1 class="applications">Applications en physique</h1>
+          <div class="exercise" id="exercise5">
+            <h2>Exercice 5</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 5 -->
+              <p><b>Statement of exercise 5...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 5...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
