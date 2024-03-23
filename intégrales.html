@@ -36,6 +36,7 @@
           <li><a href="#changements_de_variable">Les changements de variables</a></li>
           <li><a href="#integrations_par_parties">Intégrations par parties</a></li>
           <li><a href="#integrations_par_parties_tabulaire">Intégrations par parties tabulaire</a></li>
+          <li><a href="#limites">Calculs de limites</a></li>
           <li><a href="#applications">Applications en physique</a></li>
         </ul>
       </div>
@@ -115,15 +116,14 @@
           </div>
           <!-- Exercise 6 -->
           <div class="exercise" id="exercise1.6">
-            <h2>Exercice 6 : Identité trigonométrique ★★★★☆</h2>
+            <h2>Exercice 6 :★★★★☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer l'intégrale :</b></p>
-              <p>$$\int_{-1}^{1}\frac{2x-\pi}{\sqrt{1-x^{2}}}dx$$</p>
+              <p></p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Pour trouver le développement limité de \(f(x)\) à l'ordre 3 en 0, <b>nous développons le numérateur à l'ordre 4 puisque nous divisons par \(x\)</b> ensuite :</p>
-              <p>Nous rappellons le développement à l'ordre 4 de \((1+x)^{\alpha }\) : $$(1+x)^{\alpha } = 1 + \alpha x + \frac{\alpha (\alpha - 1)}{2!} x^2 + \frac{\alpha (\alpha - 1)(\alpha - 2)}{3!} x^3 + \frac{\alpha (\alpha - 1)(\alpha - 2)(\alpha - 3)}{4!} x^4 + o(x^4)$$</p>
+              <p></p>
               <p></p>
             </div>
           </div>
@@ -187,17 +187,102 @@
       <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
         <div class="section-content" id="integrations_par_parties">
           <h1>Intégrations par parties</h1>
-          <div class="exercise" id="exercise3">
-            <h2>Exercice 3</h2>
+          <!-- Exercice 1 -->
+          <div class="exercise" id="exercise3.1">
+            <h2>Exercice 1 : Intégrale de la fonction \( x e^x \) ★★★★☆</h2>
             <div class="exercise-statement">
-              <p><b>Statement of exercise 3...</b></p>
-              <button class="toggle-correction">✔</button>
+                <p><b>Calculer l'intégrale :</b></p>
+                <p>$$ \int x  e^x \, dx $$</p>
+                <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Correction:</p>
-              <p>Correction of exercise 3...</p>
+                <p>Pour résoudre cette intégrale, nous allons utiliser la méthode de l'intégration par parties.</p>
+                <p>En choisissant \( u = x \) et \( v' = e^x \), nous avons :</p>
+                <p>$$ u' = 1 \, \quad \text{et} \quad v = e^x $$</p>
+                <p>Appliquons la formule de l'intégration par parties :</p>
+                <p>$$ \int x  e^x \, dx = x  e^x - \int 1  e^x \, dx = x  e^x - e^x + C $$</p>
             </div>
           </div>
+          <!-- Exercice 2 -->
+          <div class="exercise" id="exercise3.2">
+            <h2>Exercice 2 : Intégrale de la fonction \( \ln(x) \) ★★★☆☆</h2>
+            <div class="exercise-statement">
+                <p><b>Calculer l'intégrale :</b></p>
+                <p>$$ \int \ln(x) \, dx $$</p>
+                <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+                <p>Nous allons utiliser la méthode de l'intégration par parties en choisissant \( u = \ln(x) \) et \( v' = 1 \). Ainsi :</p>
+                <p>$$ u' = \frac{1}{x} \, dx \quad \text{et} \quad v = x $$</p>
+                <p>Appliquons la formule de l'intégration par parties :</p>
+                <p>$$ \int \ln(x) \, dx = x \ln(x) - \int x \frac{1}{x} \, dx $$</p>
+                <p>$$ = x \ln(x) - \int dx  = x \ln(x) - x + C$$</p>
+            </div>
+          </div>
+          <!-- Exercice 3 -->
+          <div class="exercise" id="exercise3.3">
+            <h2>Exercice 3 : Intégrale de la fonction \( e^x \cos(x) \) ★★★★☆</h2>
+            <div class="exercise-statement">
+                <p><b>Calculer l'intégrale :</b></p>
+                <p>$$ \int e^x \cos(x) \, dx $$</p>
+                <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+                <p>Pour résoudre cette intégrale, nous allons utiliser la méthode de l'intégration par parties.</p>
+                <p>En choisissant \( u = \cos(x) \) et \( v' = e^x \), nous avons :</p>
+                <p>$$ u' = -\sin(x) \, dx \quad \text{et} \quad v = e^x $$</p>
+                <p>Appliquons la formule de l'intégration par parties :</p>
+                <p>$$ \int e^x \cos(x) \, dx = e^x \cos(x) + \int e^x \sin(x) \, dx $$</p>
+                <p>Effectuons une deuxième intégration par parties en choisissant \( u = \sin(x) \) et \( v' = e^x \) :</p>
+                <p>$$ u' = \cos(x) \, dx \quad \text{et} \quad v = e^x $$</p>
+                <p>$$ \int e^x \sin(x) \, dx = e^x \sin(x) - \int e^x \cos(x) \, dx $$</p>
+                <p>En substituant cette deuxième intégrale dans la première, nous obtenons :</p>
+                <p>$$ \int e^x \cos(x) \, dx = e^x \cos(x) + e^x \sin(x) - \int e^x \cos(x) \, dx $$</p>
+                <p>En isolant l'intégrale restante, nous obtenons :</p>
+                <p>$$ 2 \int e^x \cos(x) \, dx = e^x (\cos(x) + \sin(x)) \Rightarrow \int e^x \cos(x) \, dx = \frac{1}{2} e^x (\cos(x) + \sin(x)) + C $$</p>
+            </div>
+          </div>        
+          <!-- Exercice 4 -->
+          <div class="exercise" id="exercise3.4">
+            <h2>Exercice 4 : Intégrale de la fonction \( \sqrt{x}  e^x \) ★★★★★</h2>
+            <div class="exercise-statement">
+                <p><b>Calculer l'intégrale :</b></p>
+                <p>$$ \int \sqrt{x}  e^x \, dx $$</p>
+                <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+                <p>Pour résoudre cette intégrale, nous allons utiliser une méthode d'intégration par parties.</p>
+                <p>Posons \( u = \sqrt{x} \) et \( v' = e^x \).</p>
+                <p>Alors, nous avons :</p>
+                <p>$$ u' = \frac{1}{2\sqrt{x}} \, dx \quad \text{et} \quad v = e^x $$</p>
+                <p>Appliquons la formule de l'intégration par parties :</p>
+                <p>$$ \int \sqrt{x}  e^x \, dx = \sqrt{x}  e^x - \int e^x  \frac{1}{2\sqrt{x}} \, dx $$</p>
+                <p>Effectuons un changement de variable en posant \( t = \sqrt{x} \), alors \( dx = 2t \, dt \) :</p>
+                <p>$$ = \sqrt{x} e^x - \int e^x  \frac{1}{2t}  2t \, dt = \sqrt{x} e^x - \int e^x \, dt = \sqrt{x} e^x - e^x + C $$</p>
+                <p>Ainsi, nous obtenons : $$ \int \sqrt{x} e^x \, dx = (\sqrt{x} - 1)  e^x + C $$</p>
+            </div>
+        </div>
+          <!-- Exercice 5 -->
+          <div class="exercise" id="exercise3.5">
+            <h2>Exercice 5 : Intégrale de la fonction \( \arctan(x) \) ★★★★☆</h2>
+            <div class="exercise-statement">
+                <p><b>Calculer l'intégrale :</b></p>
+                <p>$$ \int \arctan(x) \, dx $$</p>
+                <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+                <p>Pour calculer cette intégrale, nous utilisons la méthode de l'intégration par parties.</p>
+                <p>En choisissant \( u = \arctan(x) \) et \( v' = 1 \), nous avons :</p>
+                <p>$$ u' = \frac{1}{1 + x^2} \, dx \quad \text{et} \quad v = x $$</p>
+                <p>Appliquons la formule :</p>
+                <p>$$ \int \arctan(x) \, dx = x \arctan(x) - \int x \frac{1}{1 + x^2} \, dx $$</p>
+                <p>Effectuons un changement de variable en posant \( u = 1 + x^2 \) :</p>
+                <p>$$ du = 2x \, dx \quad \Rightarrow \quad dx = \frac{du}{2x} $$</p>
+                <p>$$ \int x \frac{1}{1 + x^2} \, dx = \frac{1}{2} \int \frac{1}{u} \, du = \frac{1}{2} \ln(u) + C = \frac{1}{2} \ln(1 + x^2) + C $$</p>
+                <p>Ainsi nous obtenons, $$ \int \arctan(x) \, dx = x \arctan(x) - \frac{1}{2} \ln(1 + x^2) + C $$</p>
+            </div>
+          </div>        
+          <!-- Exercice 6 -->
         </div>
       </div>
       
@@ -219,15 +304,34 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Section 5 -->
       <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
-        <div class="section-content" id="applications">
-          <h1 class="applications">Applications en physique</h1>
-          <div class="exercise" id="exercise5">
-            <h2>Exercice 5</h2>
+        <div class="section-content" id="limites">
+          <h1>Calculs de limites</h1>
+          <div class="exercise" id="exercise5.1">
+            <h2>Exercice 1</h2>
             <div class="exercise-statement">
               <!-- LaTeX representation of Exercise 5 -->
+              <p><b>Statement of exercise 5...</b></p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Correction:</p>
+              <p>Correction of exercise 5...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 6 -->
+      <div class="page" id="page6" style="background-color: rgba(3, 58, 75, 1);">
+        <div class="section-content" id="applications">
+          <h1>Applications en physique</h1>
+          <div class="exercise" id="exercise6.1">
+            <h2>Exercice 1</h2>
+            <div class="exercise-statement">
+              <!-- LaTeX representation of Exercise 6 -->
               <p><b>Statement of exercise 5...</b></p>
               <button class="toggle-correction">✔</button>
             </div>
