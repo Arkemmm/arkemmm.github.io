@@ -32,8 +32,8 @@
         <h2>Thèmes du chapitre</h2>
         <ul>
           <li><a href="#1">Les formes usuelles</a></li>
-          <li><a href="#2">Les produits de fonctions</a></li>
-          <li><a href="#3">Les compositions</a></li>
+          <li><a href="#2">Les produits et compositions de fonctions</a></li>
+          <li><a href="#3">Pas en zéro</a></li>
           <li><a href="#4">Calculs de limites</a></li>
           <li><a href="#5">Applications en physique</a></li>
         </ul>
@@ -50,7 +50,7 @@
             <h2>Exercice 1 : Développement limité d'une fonction exponentielle ★☆☆☆☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 5 en 0 :</b></p>
-              <p>$$f(x) = e^x$$</p>
+              <p>$$dl_5(0) : e^x$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
@@ -63,12 +63,12 @@
             <h2>Exercice 2 : Développement limité d'une fonction trigonométrique ★★☆☆☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
-              <p>$$g(x) = \sin(x)$$</p>
+              <p>$$dl_4(0) : \sin(x)$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Le développement limité de \(g(x)\) à l'ordre 4 en 0 est :</p>
-              <p>$$g(x) = x - \frac{x^3}{6} + \frac{x^5}{120} + o(x^5)$$</p>
+              <p>Le développement limité de \(f(x)\) à l'ordre 4 en 0 est :</p>
+              <p>$$f(x) = x - \frac{x^3}{6} + \frac{x^5}{120} + o(x^5)$$</p>
             </div>
           </div>
           <!-- Exercise 3 -->
@@ -76,7 +76,7 @@
             <h2>Exercice 3 : Développement limité d'une fonction rationnelle ★★★★☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
-              <p>$$f(x) = \frac{1}{2 + 2x}$$</p>
+              <p>$$dl_4(0) : \frac{1}{2 + 2x}$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
@@ -88,20 +88,14 @@
           </div>
           <!-- Exercise 4 -->
           <div class="exercise" id="exercise1.4">
-            <h2>Exercice 4 : Développement limité d'une fonction logarithmique ★★★★☆</h2>
+            <h2>Exercice 4 : dbgfdfgdfgb</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 5 en 1 :</b></p>
               <p>$$h(x) = \ln(x)$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Le développement limité de \(h(x)\) à l'ordre 5 en 1 est :</p>
-              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
-              <p>Explication :</p>
-              <p>Pour trouver le développement limité de \(h(x)\) à l'ordre 5 en 1, nous utilisons le développement de Taylor-Young :</p>
-              <p>$$h(x) = h(1) + h'(1)(x - 1) + \frac{h''(1)}{2!}(x - 1)^2 + \frac{h'''(1)}{3!}(x - 1)^3 + \frac{h^{(4)}(1)}{4!}(x - 1)^4 + \frac{h^{(5)}(1)}{5!}(x - 1)^5 + o((x - 1)^5)$$</p>
-              <p>En utilisant les valeurs connues des dérivées de \(\ln(x)\) en 1, nous obtenons :</p>
-              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
+              <p></p>
             </div>
           </div>
           <!-- Exercise 5 -->
@@ -109,7 +103,7 @@
             <h2>Exercice 5 : Développement limité d'une fonction racine carrée ★★★★☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 4 en 0 :</b></p>
-              <p>$$f(x) = \sqrt{x + 1}$$</p>
+              <p>$$dl_4(0) : \sqrt{x + 1}$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
@@ -127,7 +121,7 @@
             <h2>Exercice 6 : Une petite subtilité ★★★☆☆</h2>
             <div class="exercise-statement">
               <p><b>Calculer le développement limité à l'ordre 3 en 0 :</b></p>
-              <p>$$f(x) = \frac{(1+x)^4}{x}$$</p>
+              <p>$$dl_3(0) : \frac{(1+x)^4}{x}$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
@@ -149,9 +143,9 @@
       <!-- Section 2 -->
       <div class="page" id="page2" style="background-color: rgba(3, 58, 75, 0.4);">
         <div class="section-content" id="2">
-          <h1 class="changement-de-variable">Changement de variables dans les développements limités</h1>
+          <h1>Les produits et compositions de fonctions</h1>
           <div class="exercise" id="exercise2">
-            <h2>Exercice 2 : Utilisation d'un changement de variable dans un développement limité</h2>
+            <h2>Exercice 2 :</h2>
             <div class="exercise-statement">
               <p><b>Statement of exercise 2...</b></p>
               <button class="toggle-correction">✔</button>
@@ -167,25 +161,50 @@
       <!-- Section 3 -->
       <div class="page" id="page3" style="background-color: rgba(3, 58, 75, 0.6);">
         <div class="section-content" id="3">
-          <h1 class="integration-par-parties">Intégration par parties dans les développements limités</h1>
-          <div class="exercise" id="exercise3">
-            <h2>Exercice 3 : Utilisation de l'intégration par parties dans un développement limité</h2>
+          <h1 class="integration-par-parties">Les développements limités mais pas en zéros !</h1>
+          <div class="exercise" id="exercise3.1">
+            <h2>Exercice 1 : Développement limité de la fonction racine carré en 1 ★☆☆☆☆</h2>
             <div class="exercise-statement">
-              <p><b>Statement of exercise 3...</b></p>
+              <p><b>Calculer le développement limité à l'ordre 3 en 1 :</b></p>
+              <p>$$dl_3(1) = \sqrt{x}$$</p>
               <button class="toggle-correction">✔</button>
             </div>
             <div class="exercise-correction hidden">
-              <p>Correction:</p>
-              <p>Correction of exercise 3...</p>
+              <p>On peut utiliser un changement de variable. On pose \(h+1=x\), ce qui revient à faire un développement limité de h en zéro.</p>
+              <p>$$f(h) = \sqrt{h+1} = (h+1)^{\frac{1}{2}}$$</p>
+              <p>On reconnaît la forme \((1+x)^\alpha\), dont le développement limité est : \(1+\alpha x + \alpha (\alpha -1)\frac{x^2}{2!} + \alpha (\alpha -1)(\alpha -2)\frac{x^3}{3!} + o(x^3)\), nous avons ainsi :</p>
+              <p>$$\sqrt{h+1} = 1 + \frac{1}{2}h + \frac{1}{2}\cdot\frac{-1}{2}\cdot\frac{h^2}{2} + \frac{1}{2}\cdot\frac{-1}{2}\cdot\frac{-3}{2}\cdot\frac{h^3}{6} = 1 + \frac{1}{2}h - \frac{1}{8}h^2 + \frac{1}{16}h^3 + o(h^3)$$</p>
+              <p>On peut désormais repasser à \(x\), ce qui nous donne :</p>
+              <p>$$dl_3(1) = \sqrt{x} = 1 + \frac{1}{2}(x-1) - \frac{1}{8}(x-1)^2 + \frac{1}{16}(x-1)^3 + o((x-1)^3)$$</p>
             </div>
           </div>
+          <!-- Exercice 2 -->
+          <div class="exercise" id="exercise3.2">
+            <h2>Exercice 2 : Développement limité d'une fonction logarithmique ★★★★☆</h2>
+            <div class="exercise-statement">
+              <p><b>Calculer le développement limité à l'ordre 5 en 1 :</b></p>
+              <p>$$dl_5(1) = \ln(x)$$</p>
+              <button class="toggle-correction">✔</button>
+            </div>
+            <div class="exercise-correction hidden">
+              <p>Le développement limité de \(h(x)\) à l'ordre 5 en 1 peut être calculer avec la formule de <b>Taylor</b> :</p>
+              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
+              <p>Explication :</p>
+              <p>Pour trouver le développement limité de \(h(x)\) à l'ordre 5 en 1, nous utilisons le développement de Taylor-Young :</p>
+              <p>$$h(x) = h(1) + h'(1)(x - 1) + \frac{h''(1)}{2!}(x - 1)^2 + \frac{h'''(1)}{3!}(x - 1)^3 + \frac{h^{(4)}(1)}{4!}(x - 1)^4 + \frac{h^{(5)}(1)}{5!}(x - 1)^5 + o((x - 1)^5)$$</p>
+              <p>En utilisant les valeurs connues des dérivées de \(\ln(x)\) en 1, nous obtenons :</p>
+              <p>$$h(x) = (x - 1) - \frac{(x - 1)^2}{2} + \frac{(x - 1)^3}{3} - \frac{(x - 1)^4}{4} + \frac{(x - 1)^5}{5} + o((x - 1)^5)$$</p>
+            </div>
+          </div>
+          <!-- Exercice 3 -->
+          <!-- Exercice 4 -->
         </div>
       </div>
       
       <!-- Section 4 -->
       <div class="page" id="page4" style="background-color: rgba(3, 58, 75, 0.8);">
         <div class="section-content" id="4">
-          <h1 class="integration-par-parties-tabulaire">Intégration par parties tabulaire dans les développements limités</h1>
+          <h1>Intégration par parties tabulaire dans les développements limités</h1>
           <div class="exercise" id="exercise4">
             <h2>Exercice 4 : Utilisation de l'intégration par parties tabulaire dans un développement limité</h2>
             <div class="exercise-statement">
@@ -203,7 +222,7 @@
       <!-- Section 5 -->
       <div class="page" id="page5" style="background-color: rgba(3, 58, 75, 1);">
         <div class="section-content" id="5">
-          <h1 class="applications">Applications des développements limités en physique</h1>
+          <h1>Applications des développements limités en physique</h1>
           <div class="exercise" id="exercise5">
             <h2>Exercice 5 : Application des développements limités en physique</h2>
             <div class="exercise-statement">

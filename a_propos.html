@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site de mathématiques</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<style>
+.text {
+    margin: 0 0 1em 1em;
+    font-size: larger;
+    font-weight: 600;
+}
+</style>
+           
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><span>&#127968;</span><b>Accueil</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><span>&#128290;</span><b>Exercices</b></a>
+        <div class="dropdown-content">
+          <a href="#" class="sub-topic" data-topic="algebra"><b>Algèbre</b></a>
+          <a href="#" class="sub-topic" data-topic="calculus"><b>Calculs</b></a>
+        </div>
+      </li>
+      <li><a href="ressources.html"><span>🗂️</span><b>Ressources</b></a></li>
+      <li><a href="a_propos.html" style="margin-left: 95rem;"><span>❓</span><b>À propos</b></a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+    <div class="content">
+        <div class="page" id="page1" style="background-color: rgba(112, 255, 196, 0.541);">
+            <h1 class="titre">Pourquoi ce site ?</h1>
+            <p class="text">J'ai créé ce site en mars 2024 dans le but de rendre accessibles des exercices et corrections détaillés, le tout avec une interface agréable. Ce site est principalement destiné aux étudiants du BUT.<p>
+            <h1 class="titre">Qui suis-je ?</h1>
+            <p class="text">Je suis actuellement en première année de BUT GMP à l'université d'Orléans. L'année dernière, j'ai choisi l'option informatique, ce qui m'a donné quelques bases pour créer ce site.<p>
+        </div>
+    </div>
+</main>
+</body>
+</html>

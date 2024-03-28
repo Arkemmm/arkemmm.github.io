@@ -6,12 +6,24 @@
   --contrast-color: #001c22;
   --light-color: #a2f1ff;
   --white: #F9F7F3;
-  --shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.2);
-  --shadow-footer: 0 -0.5em 1em rgba(0, 0, 0, 0.2);
+  --shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.2);
+  --shadow-footer: 0 -0.15em 0.3em rgba(0, 0, 0, 0.2);
 }
 
-/* Main CSS styles */
+.night-mode {
+  /* Night mode styles */
+  --main-color: #107896;
+  --main-color-70: #107896b3;
+  --main-color-20: #10789641;
+  --contrast-color: #ffffff;
+  --light-color: #1d1d1d;
+  --white: #333333;
+  --shadow: 0.5em 0.5em 1em rgba(255, 255, 255, 0.1);
+  --dark-shadow: 0.5em 0.5em 1em rgba(255, 255, 255, 0.2);
+  --shadow-footer: 0 -0.5em 1em rgba(255, 255, 255, 0.2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,25 +40,54 @@ body {
   background-color: var(--main-color-20);
 }
 
+/* Partie supérieur de la page (ne pas confondre avec 'nav') */
 header {
-  background-color: #0288a0;
+  background-color: var(--main-color);
   color: var(--white);
   padding: 0.625em 0;
   border-radius: 0 0 0.7em 0.7em;
 }
-
+/* Pied de page */
 footer {
   bottom: 0;
   text-align: center;
-  background-color: #0288a0;
+  background-color: var(--main-color);
   color: var(--white);
   padding: 1em 0;
   border-radius: 0.7em 0.7em 0 0;
   box-shadow: var(--shadow-footer);
 }
 
+h1 {
+  background-color: var(--main-color-20);
+  color: var(--white);
+  padding: 0.5em 1em;
+  display: inline-block;
+  border-radius: 0.2em;
+  text-shadow: var(--dark-shadow);
+  margin-bottom: 0.5em;
+}
+
+/*Style des titres des pages */
+.titre {
+  text-decoration: underline;
+  font-size: xx-large;
+  padding: 10px 20px;
+  margin-right: 20rem;
+  color: var(--white);
+  border-radius: 5px;
+  display: inline-block;
+  text-shadow: var(--dark-shadow);
+}
+
+a{
+  color: var(--light-color);
+}
+
+/* Menu de navigation en haut de la page */
 nav ul {
-  list-style: none;
+  display: flex;
+  justify-content: safe;
 }
 
 nav ul li {
