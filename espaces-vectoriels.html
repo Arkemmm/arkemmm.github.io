@@ -86,12 +86,23 @@
             </div>
             <!-- Exercice 2 - Liée -->
             <div class="exercise-statement">
-              <p><b>Étudier la famille de vecteurs :</b></p>
+              <p><b>Étudier la famille de vecteurs : $$\overrightarrow{u}=\begin{pmatrix}1\\2\\-1\end{pmatrix},\overrightarrow{v}=\begin{pmatrix}1\\0\\1\end{pmatrix},\overrightarrow{w}=\begin{pmatrix}-1\\2\\-3\end{pmatrix}$$</b></p>
               <button class="toggle-correction">✔</button>
-            </div>
-            <div class="exercise-correction hidden">
-              <p></p>
-            </div>
+          </div>
+          <div class="exercise-correction hidden">
+              <p>Pour commencer, intéressons-nous au caractère libre (ou non) de la famille de vecteurs dans \(\mathbb{R}^3\). Soient \(\alpha ,\beta ,\gamma \in \mathbb{R}\) :</p>
+              <p>$$\alpha \overrightarrow{u} + \beta \overrightarrow{v} + \gamma \overrightarrow{w} = 0_{\mathbb{R}^3} \iff \alpha \begin{pmatrix}1\\2\\-1\end{pmatrix} + \beta \begin{pmatrix}1\\0\\1\end{pmatrix} + \gamma \begin{pmatrix}-1\\2\\-3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix} \iff \begin{pmatrix}\alpha \\2\alpha \\-\alpha \end{pmatrix} + \begin{pmatrix}\beta \\0 \\\beta \end{pmatrix} + \begin{pmatrix}-\gamma \\ 2\gamma \\ -3\gamma \end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$$</p>
+              <p>Désormais, il nous reste plus qu'à résoudre le système. Si les coefficients \(\alpha\), \(\beta\), \(\gamma\) sont tous égaux à zéro, nous pourrons affirmer que la famille est libre.</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta-\gamma&=&0\\2\alpha+2\gamma&=&0 \\-\alpha+\beta-3\gamma&=&0 \end{array}\right.$$</p>
+              <p>Nous pouvons résoudre ce système en utilisant la méthode du pivot de Gauss.</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta-\gamma&=&0\\2\alpha+2\gamma&=&0 \qquad L_2\gets L_2-2L_1\\-\alpha+\beta-3\gamma&=&0 \qquad L_2\gets L_3+L_1\end{array}\right.$$</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta-\gamma&=&0\\-2\beta+4\gamma&=&0 \\ 2\beta-4\gamma&=&0 \quad L_3\gets L_3+L_2\end{array}\right.$$</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta-\gamma&=&0\\-2\beta+4\gamma&=&0 \\ 0&=&0 \end{array}\right.$$</p>
+              <p>On dispose d'une inconnue secondaire, ce qui montre que la famille est liée. Mais allons plus loin afin d'exprimer le vecteur \(\overrightarrow{w}\) en fonction de \(\overrightarrow{u}\) et \(\overrightarrow{v}\) :</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta&=&\gamma&\\-2\beta&=&-4\gamma \qquad L_2\gets \frac{L_2}{-2}\end{array}\right.$$</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha+\beta&=&\gamma& \qquad L_1\gets L_1-L_2\\\beta&=&2\gamma \end{array}\right.$$</p>
+              <p>$$\left\{\begin{array}{rcl}\alpha&=&-\gamma& \\\beta&=&2\gamma \end{array}\right.$$</p>
+              <p>Ainsi on obtient la relation suivante : \(\overrightarrow{u} - 2 \overrightarrow{v} = \overrightarrow{w}\)</p>
           </div>
           <!-- Partie 2 - Caractère générateur -->
           <div class="exercise" id="exercise3.1">

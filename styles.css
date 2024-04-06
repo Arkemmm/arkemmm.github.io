@@ -113,7 +113,10 @@ nav ul li a,
   background-color: var(--main-color);
   z-index: 1;
   border-radius: 0.3125em;
+  right: 0;
+  top: 100%;
 }
+
 
 .dropdown-content a:hover {
   background-color: #03545763;
@@ -182,6 +185,12 @@ nav ul li a,
   padding: 0.625em;
 }
 
+.text {
+  margin: 0 0 1em 1em;
+  font-size: larger;
+  font-weight: 600;
+}
+
 /* Style du "grand" rectangle contenant l'exercice */
 .exercise {
   width: 75%;
@@ -191,6 +200,7 @@ nav ul li a,
   margin-bottom: 1.25em;
   margin-top: 0.5em;
   border-radius: 0.625em;
+  box-shadow: var(--shadow);
 }
 
 .exercise h2 {

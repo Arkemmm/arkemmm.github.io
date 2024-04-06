@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.addEventListener('mouseout', function(event) {
       const relatedTarget = event.relatedTarget;
+      // Check if mouse moves to a child element of the subTopicContainer
       if (!relatedTarget || relatedTarget.closest('.sub-topic-container')) return;
 
       Object.values(subTopicContainers).forEach(container => {
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!correction.classList.contains('hidden')) {
           correction.style.display = 'block';
           correction.style.animation = 'slideIn 0.5s forwards';
-        } else {
+        } else {  
           correction.style.display = 'none';
           correction.style.animation = '';
         }
